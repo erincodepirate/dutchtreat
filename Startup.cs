@@ -21,7 +21,7 @@ namespace dutchtreat
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            /*if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -34,7 +34,12 @@ namespace dutchtreat
                 {
                     await context.Response.WriteAsync("Hello World!");
                 });
-            });
+            });*/
+            //app.Run(async context => {
+                //await context.Response.WriteAsync("<html><body><h1>Hello world</h1></body></html>");
+            //});
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
         }
     }
 }
